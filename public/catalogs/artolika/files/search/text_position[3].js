@@ -1,1 +1,0 @@
-positionForPages[3] = { page: 3, positions: [] };
