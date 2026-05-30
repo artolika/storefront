@@ -1,0 +1,61 @@
+positionForPages[72] = {
+  page: 72,
+  positions: [
+    {
+      word: "God",
+      left: 0.059889,
+      top: 0.039352,
+      width: 0.031273,
+      height: 0.013529,
+    },
+    {
+      word: "Series",
+      left: 0.096023,
+      top: 0.039352,
+      width: 0.045336,
+      height: 0.013529,
+    },
+    {
+      word: "Divine",
+      left: 0.818025,
+      top: 0.039352,
+      width: 0.045905,
+      height: 0.013529,
+    },
+    {
+      word: "Collection",
+      left: 0.868792,
+      top: 0.039352,
+      width: 0.072429,
+      height: 0.013529,
+    },
+    {
+      word: "29",
+      left: 0.027889,
+      top: 0.969058,
+      width: 0.015139,
+      height: 0.011192,
+    },
+    {
+      word: "SB001",
+      left: 0.058467,
+      top: 0.906956,
+      width: 0.039626,
+      height: 0.011989,
+    },
+    {
+      word: "SB002",
+      left: 0.356582,
+      top: 0.90717,
+      width: 0.042906,
+      height: 0.011989,
+    },
+    {
+      word: "SB003",
+      left: 0.654697,
+      top: 0.90717,
+      width: 0.043429,
+      height: 0.011989,
+    },
+  ],
+};

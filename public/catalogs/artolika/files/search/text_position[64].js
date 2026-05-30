@@ -1,0 +1,61 @@
+positionForPages[64] = {
+  page: 64,
+  positions: [
+    {
+      word: "LGS",
+      left: 0.059889,
+      top: 0.039352,
+      width: 0.030544,
+      height: 0.013529,
+    },
+    {
+      word: "Series",
+      left: 0.095294,
+      top: 0.039352,
+      width: 0.045338,
+      height: 0.013529,
+    },
+    {
+      word: "Divine",
+      left: 0.818025,
+      top: 0.039352,
+      width: 0.045905,
+      height: 0.013529,
+    },
+    {
+      word: "Collection",
+      left: 0.868792,
+      top: 0.039352,
+      width: 0.072429,
+      height: 0.013529,
+    },
+    {
+      word: "27",
+      left: 0.027889,
+      top: 0.969058,
+      width: 0.014458,
+      height: 0.011192,
+    },
+    {
+      word: "LGS001",
+      left: 0.058471,
+      top: 0.906956,
+      width: 0.049773,
+      height: 0.011989,
+    },
+    {
+      word: "LGS002",
+      left: 0.356586,
+      top: 0.90717,
+      width: 0.053054,
+      height: 0.011989,
+    },
+    {
+      word: "LGS003",
+      left: 0.654702,
+      top: 0.90717,
+      width: 0.053576,
+      height: 0.011989,
+    },
+  ],
+};

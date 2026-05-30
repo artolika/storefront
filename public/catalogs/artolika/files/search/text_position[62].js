@@ -1,0 +1,61 @@
+positionForPages[62] = {
+  page: 62,
+  positions: [
+    {
+      word: "Shiv",
+      left: 0.059889,
+      top: 0.039352,
+      width: 0.03116,
+      height: 0.013529,
+    },
+    {
+      word: "Parvati",
+      left: 0.095909,
+      top: 0.039352,
+      width: 0.051933,
+      height: 0.013529,
+    },
+    {
+      word: "Series",
+      left: 0.152703,
+      top: 0.039352,
+      width: 0.045338,
+      height: 0.013529,
+    },
+    {
+      word: "Divine",
+      left: 0.818025,
+      top: 0.039352,
+      width: 0.045905,
+      height: 0.013529,
+    },
+    {
+      word: "Collection",
+      left: 0.868792,
+      top: 0.039352,
+      width: 0.072429,
+      height: 0.013529,
+    },
+    {
+      word: "21",
+      left: 0.027889,
+      top: 0.969058,
+      width: 0.012764,
+      height: 0.011192,
+    },
+    {
+      word: "G001",
+      left: 0.058471,
+      top: 0.906956,
+      width: 0.033445,
+      height: 0.011989,
+    },
+    {
+      word: "G003",
+      left: 0.62,
+      top: 0.90717,
+      width: 0.037249,
+      height: 0.011989,
+    },
+  ],
+};

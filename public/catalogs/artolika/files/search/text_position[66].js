@@ -1,0 +1,68 @@
+positionForPages[66] = {
+  page: 66,
+  positions: [
+    {
+      word: "Maa",
+      left: 0.059889,
+      top: 0.039352,
+      width: 0.033331,
+      height: 0.013529,
+    },
+    {
+      word: "Durga",
+      left: 0.098081,
+      top: 0.039352,
+      width: 0.045808,
+      height: 0.013529,
+    },
+    {
+      word: "Series",
+      left: 0.14875,
+      top: 0.039352,
+      width: 0.045338,
+      height: 0.013529,
+    },
+    {
+      word: "Divine",
+      left: 0.818025,
+      top: 0.039352,
+      width: 0.045905,
+      height: 0.013529,
+    },
+    {
+      word: "Collection",
+      left: 0.868792,
+      top: 0.039352,
+      width: 0.072429,
+      height: 0.013529,
+    },
+    {
+      word: "29",
+      left: 0.027889,
+      top: 0.969058,
+      width: 0.015139,
+      height: 0.011192,
+    },
+    {
+      word: "D001",
+      left: 0.058467,
+      top: 0.906956,
+      width: 0.032468,
+      height: 0.011989,
+    },
+    {
+      word: "D002",
+      left: 0.356582,
+      top: 0.90717,
+      width: 0.035749,
+      height: 0.011989,
+    },
+    {
+      word: "D003",
+      left: 0.654697,
+      top: 0.90717,
+      width: 0.036271,
+      height: 0.011989,
+    },
+  ],
+};
