@@ -1,10 +1,10 @@
 // src/app/[country]/[locale]/(storefront)/catalog/CatalogClientPage.tsx
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { Search, ChevronDown, ChevronLeft, ArrowUpRight } from "lucide-react";
-import { CATALOGS_DATA, CatalogItem, ITEMS_PER_PAGE } from "./catalogs";
+import { CATALOGS_DATA, ITEMS_PER_PAGE } from "./catalogs";
 
 export default function CatalogClientPage() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +49,7 @@ export default function CatalogClientPage() {
                 {/* Centered Main Header Section */}
                 <div className="py-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
                     <div className="space-y-2">
-                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Catalogs</h1>
+                        <h1 className="text-3xl sm:text-4xl font-400 text-gray-900 tracking-tight">Catalogs</h1>
                         <p className="text-sm sm:text-base text-gray-400 max-w-2xl leading-relaxed">
                             Experience our fresh 3D Lookbooks of Artolika with seamlessly integrated pages that let you find your choice faster, convenient and easier
                         </p>
