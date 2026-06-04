@@ -1,65 +1,122 @@
-import type { Category } from "@spree/sdk";
-import { ChevronDown } from "lucide-react";
+// src/components/layout/DesktopMenu.tsx
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { usePathname } from "next/navigation";
+import { ChevronDown, Info, Phone, Box, PenTool, BookOpen } from "lucide-react";
 
 interface DesktopMenuProps {
-  rootCategories: Category[];
+  rootCategories: any[];
   basePath: string;
-  locale: any; 
+  locale: string;
 }
 
-export async function DesktopMenu({ rootCategories, basePath, locale }: DesktopMenuProps) {
-  const t = await getTranslations({ locale, namespace: "header" });
+export function DesktopMenu({ basePath }: DesktopMenuProps) {
+  const pathname = usePathname();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const linkClass = "text-sm font-medium text-gray-700 hover:text-black transition-colors h-16 flex items-center";
+  const isActive = (path: string) => pathname === path;
+
+  // Fixed widths matching your CSS calculations: absolute centered at 50% left with negative x-translation translation maps
+  const baseLinkClass = "relative text-[17px] font-semibold tracking-normal transition-colors duration-200 py-2 px-3 block text-slate-900 hover:text-slate-900 after:content-[''] after:w-[calc(100%-1.2em)] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-current after:transition-transform after:duration-200 after:ease-in-out";
+  const inactiveUnderline = "after:scale-x-0 hover:after:scale-x-100";
+  const activeUnderline = "after:scale-x-100 text-slate-900";
 
   return (
-    <nav className="hidden lg:flex items-center justify-center gap-8 h-full">
-      <Link href={basePath || "/"} className={linkClass}>
-        {t("home")}
-      </Link>
-      
-      <Link href={`${basePath}/products`} className={linkClass}>
-        {t("allProducts")}
-      </Link>
-
-      {/* Dynamic Categories from Spree */}
-      {rootCategories.map((category) =>
-        category.children && category.children.length > 0 ? (
-          <div key={category.id} className="relative group h-full">
-            <button className={`flex items-center gap-1 ${linkClass}`}>
-              <span>{category.name}</span>
-              <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-            </button>
-            
-            {/* Dropdown Menu */}
-            <div className="absolute top-full left-0 hidden group-hover:block min-w-[200px] bg-white shadow-xl border border-gray-100 rounded-xl p-2 z-50 animate-in fade-in slide-in-from-top-2">
-              {category.children.map((child) => (
-                <Link
-                  key={child.id}
-                  href={`${basePath}/c/${child.permalink}`}
-                  className="block px-4 py-2.5 text-sm text-gray-600 hover:text-black hover:bg-gray-50 rounded-lg transition-colors"
-                >
-                  {child.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        ) : (
+    <nav className="hidden lg:flex items-center ml-auto relative">
+      <ul className="flex items-center gap-1">
+        {/* Products Link */}
+        <li>
           <Link
-            key={category.id}
-            href={`${basePath}/c/${category.permalink}`}
-            className={linkClass}
+            href={`${basePath}/products`}
+            className={`${baseLinkClass} ${isActive(`${basePath}/products`) ? activeUnderline : inactiveUnderline}`}
           >
-            {category.name}
+            Products
           </Link>
-        )
-      )}
+        </li>
 
-      <Link href={`${basePath}/#contact`} className={linkClass}>
-        {t("contact")}
-      </Link>
+        {/* Catalog Link */}
+        <li>
+          <Link
+            href={`${basePath}/catalog`}
+            className={`${baseLinkClass} ${isActive(`${basePath}/catalog`) ? activeUnderline : inactiveUnderline}`}
+          >
+            Catalog
+          </Link>
+        </li>
+
+        {/* Where to Buy Link */}
+        <li>
+          <Link
+            href={`${basePath}/locate-stores`}
+            className={`${baseLinkClass} ${isActive(`${basePath}/locate-stores`) ? activeUnderline : inactiveUnderline}`}
+          >
+            Where to Buy?
+          </Link>
+        </li>
+
+        {/* More Dropdown Wrapper Menu */}
+        <li
+          className="relative"
+          onMouseEnter={() => setIsDropdownOpen(true)}
+          onMouseLeave={() => setIsDropdownOpen(false)}
+        >
+          <button
+            type="button"
+            className={`${baseLinkClass} flex items-center gap-1 cursor-pointer select-none ${isActive(`${basePath}/about`) || isActive(`${basePath}/contact`) ? activeUnderline : "after:scale-x-0"
+              }`}
+          >
+            <span>More</span>
+            <ChevronDown className={`w-3.5 h-3.5 text-slate-500 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
+          </button>
+
+          {/* Overlay Flyout Menu Panel */}
+          {isDropdownOpen && (
+            <div className="absolute right-0 mt-1 w-52 bg-white border border-gray-100 rounded-xl shadow-xl py-2 z-50 text-left animate-in fade-in slide-in-from-top-1 duration-150">
+              <Link
+                href={`${basePath}/about`}
+                className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-slate-50 hover:text-gray-900 transition-colors"
+              >
+                <Info className="w-4 h-4 text-gray-500" strokeWidth={2.2} />
+                <span>About</span>
+              </Link>
+
+              <Link
+                href={`${basePath}/contact`}
+                className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-slate-50 hover:text-gray-900 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-gray-500" strokeWidth={2.2} />
+                <span>Contact</span>
+              </Link>
+
+              <Link
+                href="#"
+                className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-400 hover:bg-slate-50 transition-colors cursor-not-allowed"
+              >
+                <Box className="w-4 h-4 text-gray-300" strokeWidth={2.2} />
+                <span>VR 360°</span>
+              </Link>
+
+              <Link
+                href="#"
+                className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-400 hover:bg-slate-50 transition-colors cursor-not-allowed"
+              >
+                <PenTool className="w-4 h-4 text-gray-300" strokeWidth={2.2} />
+                <span>ProDesign™</span>
+              </Link>
+
+              <Link
+                href="#"
+                className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-400 hover:bg-slate-50 transition-colors cursor-not-allowed"
+              >
+                <BookOpen className="w-4 h-4 text-gray-300" strokeWidth={2.2} />
+                <span>Guide</span>
+              </Link>
+            </div>
+          )}
+        </li>
+      </ul>
     </nav>
   );
 }
