@@ -64,11 +64,11 @@ export async function Header({
           {/* Desktop Logo (Hidden on Mobile, shifted left to match reference image) */}
           <Link href={basePath || "/"} className="hidden lg:flex items-center min-w-0">
             <Image
-              src="/wallx.svg"
+              src="/artolika.svg"
               alt={storeName}
-              width={90}
+              width={140}
               height={32}
-              className="object-contain w-[90px] h-auto"
+              className="object-contain w-[140px] h-auto"
               fetchPriority="high"
               loading="eager"
             />
@@ -80,11 +80,11 @@ export async function Header({
           {/* Mobile Logo (Centered on mobile, hidden on desktop) */}
           <Link href={basePath || "/"} className="lg:hidden flex items-center min-w-0">
             <Image
-              src="/wallx.svg"
+              src="/artolika.svg"
               alt={storeName}
-              width={90}
+              width={140}
               height={32}
-              className="object-contain w-[90px] h-auto"
+              className="object-contain w-[135px] h-auto"
               fetchPriority="high"
               loading="eager"
             />
