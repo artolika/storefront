@@ -23,7 +23,7 @@ export async function Footer({
     <footer className="w-full font-sans antialiased">
 
       {/* --- UPPER SEGMENT: TRUST BADGES --- */}
-      <div className="w-full bg-white border-t border-gray-200/60">
+      <div className="w-full bg-[#f8fafc] border-t border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
             {/* Prop 1 */}
