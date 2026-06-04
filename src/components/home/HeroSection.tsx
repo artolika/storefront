@@ -1,15 +1,18 @@
 // src/components/home/HeroSection.tsx
-import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, Layers, Sliders, ShieldCheck, HelpCircle, HardHat, Cpu } from "lucide-react";
+import { Sparkles, Layers, Sliders, ShieldCheck, HelpCircle, Cpu } from "lucide-react";
 
 interface HeroSectionProps {
     basePath: string;
+    locale: string;
 }
 
-export async function HeroSection({ basePath }: HeroSectionProps) {
+export async function HeroSection({ locale }: HeroSectionProps) {
     return (
-        <section className="w-full bg-white font-sans antialiased text-slate-600 selection:bg-gray-900 selection:text-white">
+        <section 
+            data-locale={locale}
+            className="w-full bg-white font-sans antialiased text-slate-600 selection:bg-gray-900 selection:text-white"
+        >
             
             {/* BLOCK 1: MASTER HERO BANNER */}
             <div className="relative w-full h-[65vh] min-h-[440px] sm:h-[75vh] flex items-center justify-center text-center px-4 overflow-hidden bg-slate-900">
@@ -22,7 +25,7 @@ export async function HeroSection({ basePath }: HeroSectionProps) {
                         priority
                         unoptimized
                     />
-                    {/* Dark aesthetic multi-layer gradient mask matching screenshot look */}
+                    {/* Dark aesthetic overlay mapping from your old WordPress design rules */}
                     <div 
                         className="absolute inset-0 transition-all duration-300"
                         style={{
@@ -81,7 +84,7 @@ export async function HeroSection({ basePath }: HeroSectionProps) {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24 sm:space-y-36">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24 sm:space-y-36">
 
                 {/* BLOCK 3: BEYOND IMAGINATION SPLIT SECTION */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -197,7 +200,7 @@ export async function HeroSection({ basePath }: HeroSectionProps) {
                     </div>
                 </div>
 
-                {/* BLOCK 6: OUR BRAND PORTFOLIO presentation */}
+                {/* BLOCK 6: OUR BRAND PORTFOLIO PRESENTATION */}
                 <div className="border-t border-gray-100 pt-16 space-y-8 w-full">
                     <div className="text-center max-w-xl mx-auto space-y-2">
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
@@ -208,7 +211,6 @@ export async function HeroSection({ basePath }: HeroSectionProps) {
                         </p>
                     </div>
 
-                    {/* Accurate height-aligned portfolio row mirroring your dynamic sub-brand tokens */}
                     <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 py-6 max-w-5xl mx-auto h-12">
                         {["wally", "rexa", "arturo", "doorware"].map((brandName) => (
                             <div key={brandName} className="h-full w-auto aspect-video relative grayscale opacity-45 hover:opacity-100 transition-all duration-200 flex items-center justify-center">
@@ -225,6 +227,6 @@ export async function HeroSection({ basePath }: HeroSectionProps) {
                 </div>
 
             </div>
-        </section>
+        </div>
     );
 }
