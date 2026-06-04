@@ -68,7 +68,7 @@ export async function Header({
               alt={storeName}
               width={90}
               height={32}
-              className="object-contain w-[90px] h-auto"
+              className="object-contain w-[140px] h-auto"
               fetchPriority="high"
               loading="eager"
             />
@@ -84,7 +84,7 @@ export async function Header({
               alt={storeName}
               width={90}
               height={32}
-              className="object-contain w-[90px] h-auto"
+              className="object-contain w-[135px] h-auto"
               fetchPriority="high"
               loading="eager"
             />
