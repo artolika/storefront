@@ -56,6 +56,26 @@ const nextConfig: NextConfig = {
         hostname: "**.trycloudflare.com",
         pathname: "/rails/active_storage/**",
       },
+      {
+        protocol: "https",
+        hostname: "**.thewallx.com",
+        pathname: "/rails/active_storage/**",
+      },
+      {
+        protocol: "https",
+        hostname: "thewallx.com",
+        pathname: "/rails/active_storage/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.artolika.com",
+        pathname: "/rails/active_storage/**",
+      },
+      {
+        protocol: "https",
+        hostname: "artolika.com",
+        pathname: "/rails/active_storage/**",
+      },
     ],
   },
 
