@@ -19,7 +19,7 @@ export const CATALOGS_DATA: CatalogItem[] = [
         collection: "Gods Collection",
         description: "Experience spiritual luxury with intricately structured high-definition visual layouts.",
         imageSrc: "/images/catalog/divine.webp",
-        viewLink: "https://catalogs.artolika.com/artolika/",
+        viewLink: "https://catalogs.artolika.com/divine/",
         tags: ["Divine", "Premium", "New Releases"]
     },
     {
